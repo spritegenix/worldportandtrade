@@ -240,13 +240,13 @@
                         <a href="index.html#about"> About Us</a>
                       </li>
                       <li>
-                        <a href="/index.html#track">Why Choose Us</a>
+                        <a href="index.html#track">Why Choose Us</a>
                       </li>
                       <li>
-                        <a href="/index.html#service">Services</a>
+                        <a href="index.html#service">Services</a>
                       </li>
                       <li>
-                        <a href="/blog.html">Blog</a>
+                        <a href="blog.html">Blog</a>
                       </li>
                       <li><a href="index.html#contact">Contact</a></li>
                     </ul>
@@ -1002,42 +1002,42 @@
               <h3 class="title">Get in Touch With Us</h3>
             </div>
             <div class="tj-animate-form d-flex align-items-center">
-              <form class="animate-form">
+              <form class="animate-form" id="contact-form" method="POST" action="mail.php">
                 <div class="row">
                   <div class="col-lg-6 col-md-6">
                     <div class="form__div">
-                      <input type="text" class="form__input" placeholder=" " />
-                      <label class="form__label">First Name</label>
+                      <input type="text" class="form__input" id="firstname" name="firstname"  placeholder=" " required />
+                      <label class="form__label" for="firstname">First Name</label>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="form__div">
-                      <input type="text" class="form__input" placeholder=" " />
-                      <label class="form__label">Last Name</label>
+                      <input type="text" class="form__input" id="lastname" name="lastname" placeholder=" "  />
+                      <label class="form__label" for="lastname">Last Name</label>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="form__div">
-                      <input type="text" class="form__input" placeholder=" " />
-                      <label class="form__label">Phone</label>
+                      <input type="tel" class="form__input" id="mblno" name="mblno"  placeholder=" " required />
+                      <label class="form__label" for="mblno">Phone</label>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="form__div">
-                      <input type="text" class="form__input" placeholder=" " />
-                      <label class="form__label"> Email Address</label>
+                      <input type="text" class="form__input" id="email" name="email" placeholder=" " required />
+                      <label class="form__label" for="email"> Email Address</label>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="form__div">
-                      <input type="text" class="form__input" placeholder=" " />
-                      <label class="form__label">Website</label>
+                      <input type="text" class="form__input" id="website" name="website"  placeholder=" " />
+                      <label class="form__label" for="website">Website</label>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="form__div">
-                      <input type="text" class="form__input" placeholder=" " />
-                      <label class="form__label">Subject</label>
+                      <input type="text" class="form__input" id="subject" name="subject" placeholder=" " required />
+                      <label class="form__label" for="subject">Subject</label>
                     </div>
                   </div>
                   <div class="col-lg-12">
@@ -1046,19 +1046,21 @@
                         type="text"
                         class="form__input textarea"
                         placeholder=" "
+                        id="message" name="message" required
                       />
-                      <label class="form__label">Message</label>
+                      <label class="form__label" for="message">Message</label>
                     </div>
                   </div>
                 </div>
                 <div class="tj-theme-button">
-                  <button
+                  <button id="contact-button"
                     class="tj-primary-btn contact-btn"
                     type="submit"
                     value="submit"
                   >
                     Send Message <i class="flaticon-right-1"></i>
                   </button>
+                  <div class="ajax-response"></div>
                 </div>
               </form>
             </div>
@@ -1174,7 +1176,7 @@
               <div class="widget-menu">
                 <ul>
                   <li>
-                    <a href="./index.html#contact">
+                    <a href=".index.html#contact">
                       <i class="flaticon-plus"></i> Advertise Now
                     </a>
                   </li>
@@ -1364,6 +1366,7 @@
     <script src="assets/js/sal.js"></script>
     <!-- Nice JS -->
     <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/ajax-form.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
