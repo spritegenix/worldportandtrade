@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p><span class="label">Name:</span> <span class="value">' . $firstname . ' ' . $lastname . '</span></p>
                 <p><span class="label">Email:</span> <span class="value">' . $email . '</span></p>
                 <p><span class="label">Mobile:</span> <span class="value">' . $mobile . '</span></p>
-                <p><span class="label">Website:</span> <span class="value">' . $website . '</span></p>
                 <p><span class="label">Subject:</span> <span class="value">' . $subject . '</span></p>
                 <p><span class="label">Message:</span></p>
                 <p class="value">' . nl2br($message) . '</p>
