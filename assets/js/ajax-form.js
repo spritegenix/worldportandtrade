@@ -30,6 +30,9 @@ $(function () {
         // Clear the form.
         $('#contact-form input,#contact-form textarea').val('');
         $('#contact-button').text('Sent!');
+        setTimeout(() => {
+          $('#contact-button').text('Send Message ');
+        }, 3000);
       })
       .fail(function (data) {
         // Make sure that the formMessages div has the 'error' class.
@@ -44,6 +47,9 @@ $(function () {
             'Oops! An error occured and your message could not be sent.'
           );
         }
+        setTimeout(() => {
+          $('#contact-button').text('Send Message ');
+        }, 3000);
       });
   });
 });
