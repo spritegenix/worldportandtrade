@@ -18,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = str_replace(array("\r", "\n"), array(" ", " "), $lastname);
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $website = isset($_POST["website"]) && !empty(trim($_POST["website"])) ? trim($_POST["website"]) : "";
-    $subject = trim($_POST["subject"]);
+    $subject = isset($_POST["subject"]) && !empty(trim($_POST["subject"])) ? trim($_POST["subject"]) : "";
     $message = trim($_POST["message"]);
     $mobile = trim($_POST["mblno"]);
 
     // Validate fields
-    if (empty($firstname) || empty($mobile)  || empty($subject) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (empty($firstname) || empty($mobile)   || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
         echo "Please complete the form and try again.";
         exit;
@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p><span class="label">Name:</span> <span class="value">' . $firstname . ' ' . $lastname . '</span></p>
                 <p><span class="label">Email:</span> <span class="value">' . $email . '</span></p>
                 <p><span class="label">Mobile:</span> <span class="value">' . $mobile . '</span></p>
-                <p><span class="label">Website:</span> <span class="value">' . $website . '</span></p>
                 <p><span class="label">Subject:</span> <span class="value">' . $subject . '</span></p>
                 <p><span class="label">Message:</span></p>
                 <p class="value">' . nl2br($message) . '</p>
